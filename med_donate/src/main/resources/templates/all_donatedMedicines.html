@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title})}">
+
+<head>
+    <title>All Your Medicines</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="content">
+         <!-- sidebar -->
+      <!-- user is logged in: sidebar -->
+      <div th:if="${loggedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+    </div>
+        <div class="sm:pl-64 pt-20">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-5xl text-center font-bold mb-4">All Your Medicines</h1>
+                <p class="text-center text-lg mb-8">List of all Medicines...</p>
+                <div class="table-container p-5">
+                    <div class="overflow-x-auto shadow-md sm:rounded-lg">
+                        <table class="w-full text-sm text-gray-500 dark:text-gray-400">
+                            <thead>
+                                <tr class="bg-gray-100 dark:bg-gray-800">
+                                    <th class="px-6 py-3 border">DONOR Name</th>
+                                    <th class="px-6 py-3 border">DONOR Phone</th>
+                                    <th class="px-6 py-3 border">DONOR Address</th>
+                                    <th class="px-6 py-3 border">Medicine Name and Quantity </th>
+                                    <th class="px-6 py-3 border">Request For Medicine</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Iterate over each medicine and display its details -->
+                                <tr th:each="medicine : ${allDonatedMedicine}" class="hover:bg-gray-100 dark:hover:bg-gray-900">
+                                    <td class="px-6 py-4 border text-center">
+                                        <svg class="h-6 w-6 text-gray-600 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                        </svg>
+                                        <span th:text="${medicine.name}" class="ml-2 font-semibold"></span>
+                                    </td>
+                                    <td class="px-6 py-4 border text-center"><span th:text="${medicine.phoneNumber}" class="font-semibold"></span></td>
+                                    <td class="px-6 py-4 border text-center"><span th:text="${medicine.address}" class="font-semibold"></span></td>
+                                    <td class="px-6 py-4 border text-center"><span th:text="${medicine.description}" class="font-semibold"></span></td>
+                                    <td class="px-6 py-4 border text-center">
+                                        <a data-th-href="@{'/user/medicines/requestForMedicine'}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                            Request
+                                        </a>     
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title})}">
+
+<head>
+    <title data-th-text="${loggedInUser.name} + ' | SCM'">Medicine Request Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom styles */
+        .profile-header {
+            background-color: #f3f4f6;
+            /* Light gray background */
+        }
+
+        .profile-content {
+            max-width: 800px;
+            /* Limit width of profile content */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900">
+    <div id="content">
+        <!-- Sidebar -->
+        <div th:if="${loggedInUser}">
+            <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="sm:pl-64 pt-20 " style="height: 1000px">
+
+            <!-- Request Medicine Form -->
+            <div class="flex justify-center flex-col items-center profile-content py-8">
+                <div
+                    class="card block p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-full max-w-lg">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">Request Medicine</h2>
+                    <form action="/user/medicines/checkMedicine" method="post">
+                        <!-- Name -->
+                        <div class="mb-4">
+                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+                                for="name">Name</label>
+                            <input name="name"
+                                class="shadow appearance-none border rounded w-full py-2 pl-3 pr-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300"
+                                id="name" type="text" placeholder="Your name">
+                        </div>
+                        <!-- Phone -->
+                        <div class="mb-4">
+                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+                                for="phone">Phone</label>
+                            <input name="phoneNumber"
+                                class="shadow appearance-none border rounded w-full py-2 pl-3 pr-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300"
+                                id="phone" type="text" placeholder="Your phone number">
+                        </div>
+                        <!-- Address -->
+                        <div class="mb-4">
+                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+                                for="address">Address</label>
+                            <input name="address"
+                                class="shadow appearance-none border rounded w-full py-2 pl-3 pr-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300"
+                                id="address" type="text" placeholder="Your address">
+                        </div>
+                        <!-- Description (Medicine and Quantity) -->
+                        <div class="mb-4">
+                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+                                >Medicine Name And Quantity You Want</label>
+                            <input name="description"
+                                class="shadow appearance-none border rounded w-full py-2 pl-3 pr-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300"
+                                id="description" type="text" placeholder="Medicine you need">
+                        </div>
+                        <button type="submit"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Request For
+                            Medicine</button>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script data-th-src="@{'/js/admin.js'}"></script>
+</body>
+
+</html>

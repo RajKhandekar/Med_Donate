@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base ::parent(~{::#content},~{::title})}">
+<head>
+    <title>Services - MedDonate</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k6Rn7VmWt+E3yNbiEzWV0XAv6VX2VM3viJFF9RRAKgI3P1X+b3wFSA5HB5NTQvZRXwMyhnwv34T9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                color-scheme: dark;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+<section id="content" class="max-w-7xl mx-auto py-12 px-6">
+    <div class="text-center mb-12">
+        <h1 class="text-5xl font-extrabold mb-4 text-indigo-600 dark:text-indigo-400">Our Services</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400">Explore the range of services we offer at MedDonate</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1: Medicine Donation -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+                <div class="p-3 bg-indigo-600 text-white rounded-full">
+                    <i class="fas fa-pills fa-lg"></i>
+                </div>
+                <h2 class="text-2xl font-semibold ml-4">Medicine Donation</h2>
+            </div>
+            <p>
+                We provide a secure platform for patients to donate their unused and unexpired medications. Help others by sharing the medications you no longer need.
+            </p>
+        </div>
+
+        <!-- Card 2: Medicine Collection -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+                <div class="p-3 bg-indigo-600 text-white rounded-full">
+                    <i class="fas fa-hand-holding-medical fa-lg"></i>
+                </div>
+                <h2 class="text-2xl font-semibold ml-4">Medicine Collection</h2>
+            </div>
+            <p>
+                Needy individuals and organizations can browse and request available medications. We ensure that donated medications are safely transferred to those who need them.
+            </p>
+        </div>
+
+        <!-- Card 3: Health Resources -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+                <div class="p-3 bg-indigo-600 text-white rounded-full">
+                    <i class="fas fa-book-medical fa-lg"></i>
+                </div>
+                <h2 class="text-2xl font-semibold ml-4">Health Resources</h2>
+            </div>
+            <p>
+                Access a wealth of health-related resources and information. From medication guidelines to wellness tips, our resources are here to support your health journey.
+            </p>
+        </div>
+
+        <!-- Card 4: Volunteer Opportunities -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+                <div class="p-3 bg-indigo-600 text-white rounded-full">
+                    <i class="fas fa-hands-helping fa-lg"></i>
+                </div>
+                <h2 class="text-2xl font-semibold ml-4">Volunteer Opportunities</h2>
+            </div>
+            <p>
+                Join our team of volunteers and help us make a difference. Whether it's organizing medication drives or assisting with distribution, your help is invaluable.
+            </p>
+        </div>
+
+        <!-- Card 5: Community Outreach -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+                <div class="p-3 bg-indigo-600 text-white rounded-full">
+                    <i class="fas fa-bullhorn fa-lg"></i>
+                </div>
+                <h2 class="text-2xl font-semibold ml-4">Community Outreach</h2>
+            </div>
+            <p>
+                Participate in our community outreach programs aimed at raising awareness about the importance of medication donation and proper medication disposal.
+            </p>
+        </div>
+
+        <!-- Card 6: Support Services -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+                <div class="p-3 bg-indigo-600 text-white rounded-full">
+                    <i class="fas fa-headset fa-lg"></i>
+                </div>
+                <h2 class="text-2xl font-semibold ml-4">Support Services</h2>
+            </div>
+            <p>
+                Our support team is here to assist you with any questions or issues you may have. We are dedicated to providing the best possible support to our users.
+            </p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

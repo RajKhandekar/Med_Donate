@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base ::parent(~{::#content},~{::title})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MedDonate</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                color-scheme: dark;
+            }
+        }
+        .text-gray-800,
+        .dark:text-gray-200 {
+            color: #374151; /* Default text color */
+        }
+        .text-gray-600,
+        .dark:text-gray-400 {
+            color: #6b7280; /* Text color for descriptions */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+<section id="content" class="max-w-5xl mx-auto py-12 px-6">
+    <div class="text-center mb-12">
+        <h1 class="text-5xl font-extrabold mb-4 text-indigo-600 dark:text-indigo-400">Welcome to MedDonate</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400">Connecting with us</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Card 1: Our Mission -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+                <div class="p-3 bg-indigo-600 text-white rounded-full">
+                    <i class="fas fa-bullseye fa-lg"></i> <!-- Icon for Our Mission -->
+                </div>
+                <h2 class="text-2xl font-semibold ml-4">Our Mission</h2>
+            </div>
+            <p>
+                MedDonate is dedicated to providing a platform where patients can donate their unused and unexpired medications
+                to help those in need. Our mission is to reduce medical waste, promote sustainability, and improve access to
+                essential medicines for underserved communities.
+            </p>
+        </div>
+
+        <!-- Card 2: How It Works -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+                <div class="p-3 bg-indigo-600 text-white rounded-full">
+                    <i class="fas fa-cogs fa-lg"></i> <!-- Icon for How It Works -->
+                </div>
+                <h2 class="text-2xl font-semibold ml-4">How It Works</h2>
+            </div>
+            <p class="mb-4">Our process is simple and user-friendly:</p>
+            <ol class="list-decimal list-inside space-y-2">
+                <li>Patients register on the MedDonate website and list the medications they wish to donate.</li>
+                <li>Needy individuals or organizations can browse available medications and request what they need.</li>
+            </ol>
+        </div>
+
+        <!-- Card 3: Why MedDonate? -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+                <div class="p-3 bg-indigo-600 text-white rounded-full">
+                    <i class="fas fa-question-circle fa-lg"></i> <!-- Icon for Why MedDonate? -->
+                </div>
+                <h2 class="text-2xl font-semibold ml-4">Why MedDonate?</h2>
+            </div>
+            <p>
+                Every year, millions of dollars worth of medications are discarded, even though many of them are still safe and effective.
+                MedDonate aims to bridge the gap between surplus and need, ensuring that valuable resources are not wasted but rather used to
+                enhance the well-being of those who cannot afford them.
+            </p>
+        </div>
+
+        <!-- Card 4: Get Involved -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center mb-4">
+                <div class="p-3 bg-indigo-600 text-white rounded-full">
+                    <i class="fas fa-users fa-lg"></i> <!-- Icon for Get Involved -->
+                </div>
+                <h2 class="text-2xl font-semibold ml-4">Get Involved</h2>
+            </div>
+            <p>
+                Whether you are a potential donor or someone in need of medication, we invite you to join our community. Together,
+                we can make a significant impact on public health and the environment.
+            </p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{::#content},~{::title})}"
+>
+  <head>
+    <title>All Your Medicines</title>
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>All Your Medicines</title>
+  </head>
+  <body>
+  <div id="content">
+      <!-- sidebar -->
+      <!-- user is logged in: sidebar -->
+      <div th:if="${loggedInUser}">
+          <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+      </div>
+        <div class="sm:pl-64 pt-20">
+          <div class="">
+              <h1 class="text-5xl text-center">All Your Medicines</h1>
+              <p class="text-center">List of all Medicines...</p>
+              <div class="medicines_container p-5">
+                  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+            
+                      <table
+                              data-th-if="${pageMedicine.totalElements>0}"
+                              class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                          <thead
+                                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                          <tr>
+                              <th scope="col" class="px-6 py-3">DONOR Name</th>
+                              <th scope="col" class="px-6 py-3">DONOR Phone</th>
+                              <th scope="col" class="px-6 py-3">DONOR Address</th>
+                              <th scope="col" class="px-6 py-3">Medicine Name and Quantity</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr
+                                  data-th-object="${medicine}"
+                                  data-th-each="medicine : ${pageMedicine.content}"
+                                  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                              <td class="px-6 py-4" th:text="${medicine.name}"></td>
+                              <td class="px-6 py-4" th:text="${medicine.phoneNumber}"></td>
+                              <td class="px-6 py-4" th:text="${medicine.address}"></td>
+                              <td class="px-6 py-4" th:text="${medicine.description}"></td>
+                          </tr>
+                          </tbody>
+                      </table>
+                      <h1
+                              class="text-5xl text-center dark:bg-gray-800 dark:text-white bg-white p-4"
+                              data-th-if="${pageMedicine.totalElements<=0}">
+                          No result found
+                      </h1>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </body>
+  </html>

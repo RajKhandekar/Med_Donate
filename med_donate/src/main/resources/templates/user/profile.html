@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title})}">
+<head>
+    <title data-th-text="${loggedInUser.name} + ' |  SCM'">Profile Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        .profile-header {
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        .profile-content {
+            max-width: 800px; /* Limit width of profile content */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+<div id="content">
+    <!-- Sidebar -->
+    <div th:if="${loggedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+    </div>
+
+    <div class="sm:pl-64 pt-20 profile-header">
+        <div class="flex justify-center flex-col items-center profile-content py-8">
+            <h1 class="text-5xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">Welcome to Your Profile</h1>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">Manage your profile, view your donations, and track your impact.</p>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">Start making a difference today by donating unused medications.</p>
+            <!-- Additional Information -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- View Donated Medicines -->
+                <div class="bg-white dark:bg-gray-800 rounded-md shadow-md p-6">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">View Donated Medicines</h2>
+                    <p class="text-gray-800 dark:text-gray-300">View a list of medicines you have donated and their details.</p>
+                </div>
+                <!-- Request Medicines -->
+                <div class="bg-white dark:bg-gray-800 rounded-md shadow-md p-6">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Request Medicines</h2>
+                    <p class="text-gray-800 dark:text-gray-300">Request medicines you need and manage your requests.</p>
+                </div>
+                <!-- Add more cards for additional services -->
+            </div>
+            <!-- End Additional Information -->
+        </div>
+    </div>
+</div>
+</body>
+</html>
